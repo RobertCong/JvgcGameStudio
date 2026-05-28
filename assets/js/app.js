@@ -155,9 +155,17 @@
     }, 200);
   }
 
+  function updateHeroStats() {
+    var el = document.getElementById('hero-titles-count');
+    if (el && window.GAMES) {
+      el.textContent = String(window.GAMES.length);
+    }
+  }
+
   function init() {
     state.lang = safeGetLang();
     applyI18n();
+    updateHeroStats();
     document.querySelectorAll('.nav__lang-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
         setLang(btn.getAttribute('data-lang'));
