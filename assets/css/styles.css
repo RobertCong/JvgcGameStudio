@@ -52,7 +52,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-deep);
   margin-bottom: 12px;
 }
 .section-title {
@@ -128,7 +128,11 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   color: rgba(26, 20, 16, 0.5);
   transition: color 0.2s;
   padding: 4px 2px;
-  min-width: 24px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav__lang-btn.is-active { color: var(--text-primary); font-weight: 600; }
 .nav__lang-btn:hover { color: var(--text-primary); }
@@ -168,7 +172,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-deep);
   margin-bottom: 28px;
 }
 .hero__title {
@@ -475,4 +479,49 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   .hero__title { font-size: 36px; }
   .nav__logo-mark { font-size: 14px; }
   .nav__logo::after { display: none; }
+}
+
+/* ===== A11y additions ===== */
+
+/* Skip link — only visible on focus */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--text-primary);
+  color: var(--bg);
+  padding: 8px 16px;
+  z-index: 100;
+  border-radius: 0 0 8px 0;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+
+/* Visible focus rings for interactive elements that didn't have one */
+.nav__links a:focus-visible,
+.nav__lang-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.featured__cta:focus-visible,
+.contact__email:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.thumb.is-active:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* @supports fallback for background-clip: text — keep gradient where supported,
+   fall back to a solid color where not, so titles never render invisible. */
+@supports not ((background-clip: text) or (-webkit-background-clip: text)) {
+  .nav__logo-mark,
+  .hero__title,
+  .contact__title em {
+    background: none !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    color: var(--text-primary) !important;
+  }
 }
