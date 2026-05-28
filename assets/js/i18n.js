@@ -1,2 +1,77 @@
-/* JVGC Studio i18n dictionary */
-window.I18N = { en: {}, zh: {} };
+/* JVGC Studio · i18n dictionary
+ *
+ * Keys use dot.notation by section. innerHTML is used at render time, so
+ * inline tags (<br>, <em>) are allowed in values.
+ */
+window.I18N = {
+  en: {
+    'meta.title': 'JVGC Studio · Create Joyful Victories',
+    'meta.description': 'JVGC Studio - Joy, Victory, Game, Creation. A small independent studio in Beijing crafting sunny casual games for everyone.',
+
+    'nav.logoSub': 'STUDIO · Joy · Victory · Game · Creation',
+    'nav.games': 'Games',
+    'nav.about': 'About',
+    'nav.contact': 'Contact',
+
+    'hero.eyebrow': 'Joy · Victory · Game · Creation',
+    'hero.title': 'Create<br>Joyful Victories.',
+    'hero.sub': 'JVGC Studio is a small team based in Beijing, crafting sunny, easy-to-pick-up casual games for everyone — so anyone can land that small, satisfying win, anytime.',
+    'hero.stat1Label': 'Titles',
+    'hero.stat2Num': 'iOS',
+    'hero.stat2Label': 'App Store',
+    'hero.stat3Num': 'Beijing',
+    'hero.stat3Label': 'Studio',
+
+    'games.eyebrow': 'Our Games',
+    'games.title': 'Seven titles. All on the App Store.',
+    'games.cta': 'App Store ↗',
+    'games.ctaDisabled': 'Coming soon',
+
+    'about.eyebrow': 'About',
+    'about.title': 'Easy to play.<br>Built to delight.',
+    'about.p1': 'We\u2019re a small independent studio in Beijing focused on casual games — board, puzzle, arcade. Sunny, friendly, instantly rewarding for every age.',
+    'about.p2': 'Every title we ship aims for one thing: that small, joyful "I won!" moment — again and again.',
+
+    'contact.eyebrow': 'Get in Touch',
+    'contact.title': 'Have an idea, an offer,<br>or just want to <em>say hi</em>?',
+    'contact.note': 'Open to publishing, marketing, and collaboration inquiries.',
+
+    'footer.copyright': '\u00A9 2026 JVGC Studio',
+    'footer.location': 'Made with care · Beijing, China'
+  },
+  zh: {
+    'meta.title': 'JVGC Studio · 创造欢乐的胜利时刻',
+    'meta.description': 'JVGC Studio - 欢乐 · 胜利 · 游戏 · 创造。一支位于北京的独立小团队，专注阳光合家欢的休闲游戏。',
+
+    'nav.logoSub': 'STUDIO · 欢乐 · 胜利 · 游戏 · 创造',
+    'nav.games': '游戏作品',
+    'nav.about': '关于',
+    'nav.contact': '联系',
+
+    'hero.eyebrow': '欢乐 · 胜利 · 游戏 · 创造',
+    'hero.title': '创造欢乐的<br>胜利时刻。',
+    'hero.sub': 'JVGC Studio 是一支位于北京的独立小团队，专注阳光、合家欢、上手即爽的休闲游戏 —— 让每个人都能轻松赢一把。',
+    'hero.stat1Label': '已发布作品',
+    'hero.stat2Num': 'iOS',
+    'hero.stat2Label': 'App Store',
+    'hero.stat3Num': '北京',
+    'hero.stat3Label': '工作室',
+
+    'games.eyebrow': '我们的游戏',
+    'games.title': '七款作品，均已上线 App Store。',
+    'games.cta': 'App Store ↗',
+    'games.ctaDisabled': '即将上线',
+
+    'about.eyebrow': '关于',
+    'about.title': '好上手，<br>更好玩。',
+    'about.p1': '我们是一支位于北京的独立工作室，专注休闲游戏 —— 棋盘、解谜、街机。希望每一款作品都阳光、亲切、玩起来即刻有成就感。',
+    'about.p2': '每个游戏都为同一件事而做：让玩家不断收获那个小小的「我赢了」的快乐瞬间。',
+
+    'contact.eyebrow': '联系我们',
+    'contact.title': '有想法、邀约，<br>或只是想<em>打个招呼</em>？',
+    'contact.note': '我们对发行、推广、合作邀约都开放。',
+
+    'footer.copyright': '\u00A9 2026 JVGC Studio',
+    'footer.location': '用心制作 · 中国 北京'
+  }
+};
