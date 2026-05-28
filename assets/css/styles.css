@@ -401,3 +401,78 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   font-size: 12px;
   color: rgba(26, 20, 16, 0.45);
 }
+
+/* ===== Responsive ===== */
+@media (max-width: 1099px) {
+  .nav__logo-sub {
+    display: none;
+  }
+  .nav__logo::after {
+    content: 'STUDIO';
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(26, 20, 16, 0.5);
+    letter-spacing: 0.5px;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root { --container-pad: 20px; }
+  .nav__inner { padding: 14px var(--container-pad); }
+  .nav__links { display: none; }
+  .nav__right { gap: 12px; }
+  .nav__lang { padding-left: 0; border-left: none; }
+
+  .hero { padding: 80px 0 60px; }
+  .hero__title { font-size: 48px; letter-spacing: -1.5px; }
+  .hero__sub { font-size: 16px; }
+  .hero__stats { gap: 24px; flex-wrap: wrap; }
+
+  .games { padding: 60px 0; }
+  .games__title { margin-bottom: 32px; font-size: 28px; }
+  .featured {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+    padding: 0;
+  }
+  .featured__icon {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 40px;
+  }
+  .featured__name { font-size: 32px; }
+  .featured__tagline { margin-left: auto; margin-right: auto; }
+
+  .thumbs {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 40px;
+    padding-top: 24px;
+  }
+
+  .about { padding: 60px 0; }
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .about__title { font-size: 28px; }
+
+  .contact { padding: 60px 0; }
+  .contact__title { font-size: 32px; }
+  .contact__email { font-size: 18px; padding: 14px 28px; }
+
+  .footer__inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero__title { font-size: 36px; }
+  .nav__logo-mark { font-size: 14px; }
+  .nav__logo::after { display: none; }
+}
