@@ -15,7 +15,8 @@
 
   var state = {
     lang: DEFAULT_LANG,
-    activeIndex: 0
+    activeIndex: 0,
+    fadeTimer: null
   };
 
   function safeGetLang() {
@@ -142,13 +143,15 @@
       el.classList.toggle('is-active', on);
       el.setAttribute('aria-selected', on ? 'true' : 'false');
     });
-    /* Smooth fade transition */
+    /* Fade out current, then snap to new (cancellable on rapid clicks) */
     var icon = document.getElementById('featured-icon');
     var info = document.querySelector('.featured__info');
     if (icon) icon.classList.add('is-fading');
     if (info) info.classList.add('is-fading');
-    setTimeout(function () {
+    if (state.fadeTimer !== null) clearTimeout(state.fadeTimer);
+    state.fadeTimer = setTimeout(function () {
       renderFeatured(idx);
+      state.fadeTimer = null;
     }, 200);
   }
 
