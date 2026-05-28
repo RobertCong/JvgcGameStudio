@@ -35,6 +35,7 @@
     return dict[key] || '';
   }
 
+  /* SAFETY: innerHTML below is safe because all I18N values are hardcoded at build-time (assets/js/i18n.js); never accept user input here. */
   function applyI18n() {
     document.documentElement.setAttribute('lang', state.lang);
     document.title = t('meta.title');
