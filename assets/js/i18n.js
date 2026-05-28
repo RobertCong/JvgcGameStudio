@@ -47,7 +47,7 @@ window.I18N = {
     'meta.title': 'JVGC Studio · 创造<br>欢乐时刻',
     'meta.description': 'JVGC Studio | 创造游戏，分享欢乐，见证胜利。我们不只是做游戏，更是在编织一个个充满乐趣的小世界。',
 
-    'nav.logoSub': 'JVGC Studio | 创造游戏，分享欢乐，见证胜利',
+    'nav.logoSub': '创造游戏，分享欢乐，见证胜利',
     'nav.games': '游戏作品',
     'nav.about': '关于',
     'nav.contact': '联系',
@@ -57,7 +57,7 @@ window.I18N = {
 
     'hero.eyebrow': '欢乐 · 胜利 · 游戏 · 创造',
     'hero.title': '创造<br>欢乐时刻',
-    'hero.sub': 'JVGC Studio | 我们用心打磨每一款休闲游戏，为玩家带来纯粹的欢乐和胜利的喜悦。',
+    'hero.sub': '我们用心打磨每一款休闲游戏，为玩家带来纯粹的欢乐和胜利的喜悦。',
     'hero.stat1Label': '已发布作品',
     'hero.stat2Num': 'iOS',
     'hero.stat2Label': 'App Store',
@@ -72,8 +72,8 @@ window.I18N = {
 
     'about.eyebrow': '关于',
     'about.title': '好上手，<br>更好玩。',
-    'about.p1': '我们是一支位于北京的独立工作室，专注休闲游戏 —— 棋盘、解谜、街机。希望每一款作品都阳光、亲切、玩起来即刻有成就感。',
-    'about.p2': '每个游戏都为同一件事而做：让玩家不断收获那个小小的「我赢了」的快乐瞬间。',
+    'about.p1': '我们是一支位于北京的独立工作室，专注休闲游戏 —— 棋盘、解谜、街机。希望每一款作品都能为玩家带来纯粹的欢乐和胜利的喜悦。',
+    'about.p2': '让玩家在忙碌的生活里，不断收获那个小小的、闪闪发光的「我赢了」。',
 
     'contact.eyebrow': '联系我们',
     'contact.title': '有想法、邀约，<br>或只是想<em>打个招呼</em>？',
