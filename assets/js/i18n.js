@@ -44,10 +44,10 @@ window.I18N = {
     'footer.location': 'Made with care · Beijing, China'
   },
   zh: {
-    'meta.title': 'JVGC Studio · 创造欢乐的胜利时刻',
-    'meta.description': 'JVGC Studio - 欢乐 · 胜利 · 游戏 · 创造。一支位于北京的独立小团队，专注阳光合家欢的休闲游戏。',
+    'meta.title': 'JVGC Studio · 创造<br>欢乐时刻',
+    'meta.description': 'JVGC Studio | 创造游戏，分享欢乐，见证胜利。我们不只是做游戏，更是在编织一个个充满乐趣的小世界。',
 
-    'nav.logoSub': 'STUDIO · 欢乐 · 胜利 · 游戏 · 创造',
+    'nav.logoSub': 'JVGC Studio | 创造游戏，分享欢乐，见证胜利',
     'nav.games': '游戏作品',
     'nav.about': '关于',
     'nav.contact': '联系',
@@ -56,8 +56,8 @@ window.I18N = {
     'nav.ariaLang': '语言',
 
     'hero.eyebrow': '欢乐 · 胜利 · 游戏 · 创造',
-    'hero.title': '创造欢乐的<br>胜利时刻。',
-    'hero.sub': 'JVGC Studio 是一支位于北京的独立小团队，专注阳光、合家欢、上手即爽的休闲游戏 —— 让每个人都能轻松赢一把。',
+    'hero.title': '创造<br>欢乐时刻',
+    'hero.sub': 'JVGC Studio | 我们用心打磨每一款休闲游戏，为玩家带来纯粹的欢乐和胜利的喜悦。',
     'hero.stat1Label': '已发布作品',
     'hero.stat2Num': 'iOS',
     'hero.stat2Label': 'App Store',
