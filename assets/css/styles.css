@@ -270,3 +270,37 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   cursor: not-allowed;
   pointer-events: none;
 }
+
+/* ===== Thumbs ===== */
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  margin-top: 60px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.thumb {
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+  background-size: cover;
+  background-position: center;
+  border: 0;
+  outline: none;
+  padding: 0;
+}
+.thumb:hover { opacity: 0.85; }
+.thumb:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.thumb.is-active {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(255, 156, 58, 0.25);
+  outline: 2px solid rgba(255, 156, 58, 0.6);
+  outline-offset: 0;
+}

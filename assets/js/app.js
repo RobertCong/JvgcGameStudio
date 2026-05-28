@@ -57,7 +57,8 @@
       btn.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     applyI18n();
-    renderFeatured(state.activeIndex); /* defined in later task */
+    renderFeatured(state.activeIndex);
+    renderThumbs();
   }
 
   function renderFeatured(index) {
@@ -76,7 +77,7 @@
     var ctaLabel = hasUrl ? t('games.cta') : t('games.ctaDisabled');
 
     container.innerHTML =
-      '<div class="featured__icon" id="featured-icon" style="background: ' + g.iconGradient + ';" role="img" aria-label="' + escapeAttr(name) + '"></div>' +
+      '<div class="featured__icon" id="featured-icon" style="background-image: ' + g.iconGradient + ';" role="img" aria-label="' + escapeAttr(name) + '"></div>' +
       '<div class="featured__info">' +
         '<span class="featured__pill">' + escapeHtml(pill) + '</span>' +
         '<h3 class="featured__name">' + escapeHtml(name) + '</h3>' +
@@ -109,7 +110,46 @@
   }
 
   function renderThumbs() {
-    /* Implemented in Task 10 */
+    var container = document.getElementById('thumbs');
+    if (!container) return;
+    var games = window.GAMES || [];
+    container.innerHTML = '';
+    games.forEach(function (g, idx) {
+      var btn = document.createElement('button');
+      btn.className = 'thumb' + (idx === state.activeIndex ? ' is-active' : '');
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-selected', idx === state.activeIndex ? 'true' : 'false');
+      btn.setAttribute('aria-label', g.name[state.lang]);
+      btn.setAttribute('data-index', String(idx));
+      btn.style.backgroundImage = g.iconGradient;
+      /* Try icon image, fallback to gradient */
+      var img = new Image();
+      img.onload = function () {
+        btn.style.backgroundImage = 'url(' + g.icon + ')';
+      };
+      img.src = g.icon;
+      btn.addEventListener('click', function () {
+        selectGame(idx);
+      });
+      container.appendChild(btn);
+    });
+  }
+
+  function selectGame(idx) {
+    state.activeIndex = idx;
+    document.querySelectorAll('.thumb').forEach(function (el, i) {
+      var on = i === idx;
+      el.classList.toggle('is-active', on);
+      el.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    /* Smooth fade transition */
+    var icon = document.getElementById('featured-icon');
+    var info = document.querySelector('.featured__info');
+    if (icon) icon.classList.add('is-fading');
+    if (info) info.classList.add('is-fading');
+    setTimeout(function () {
+      renderFeatured(idx);
+    }, 200);
   }
 
   function init() {
