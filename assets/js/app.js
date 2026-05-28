@@ -60,8 +60,52 @@
     renderFeatured(state.activeIndex); /* defined in later task */
   }
 
-  function renderFeatured(/* index */) {
-    /* Implemented in Task 9 */
+  function renderFeatured(index) {
+    var container = document.getElementById('featured');
+    if (!container) return;
+    var games = window.GAMES || [];
+    if (!games.length) return;
+    var i = Math.max(0, Math.min(index, games.length - 1));
+    state.activeIndex = i;
+    var g = games[i];
+    var name = g.name[state.lang];
+    var tagline = g.tagline[state.lang];
+    var category = g.category[state.lang];
+    var pill = (i + 1) + ' / ' + games.length + ' · ' + category;
+    var hasUrl = !!g.appStoreUrl;
+    var ctaLabel = hasUrl ? t('games.cta') : t('games.ctaDisabled');
+
+    container.innerHTML =
+      '<div class="featured__icon" id="featured-icon" style="background: ' + g.iconGradient + ';" role="img" aria-label="' + escapeAttr(name) + '"></div>' +
+      '<div class="featured__info">' +
+        '<span class="featured__pill">' + escapeHtml(pill) + '</span>' +
+        '<h3 class="featured__name">' + escapeHtml(name) + '</h3>' +
+        '<p class="featured__tagline">' + escapeHtml(tagline) + '</p>' +
+        (hasUrl
+          ? '<a class="featured__cta" href="' + escapeAttr(g.appStoreUrl) + '" target="_blank" rel="noopener">' + escapeHtml(ctaLabel) + '</a>'
+          : '<span class="featured__cta is-disabled" aria-disabled="true">' + escapeHtml(ctaLabel) + '</span>') +
+      '</div>';
+
+    /* Try to load actual icon, fallback to gradient on error */
+    var icon = new Image();
+    icon.onload = function () {
+      var el = document.getElementById('featured-icon');
+      if (el) {
+        el.style.backgroundImage = 'url(' + g.icon + ')';
+      }
+    };
+    icon.onerror = function () { /* keep gradient */ };
+    icon.src = g.icon;
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[c];
+    });
+  }
+
+  function escapeAttr(s) {
+    return String(s).replace(/"/g, '&quot;');
   }
 
   function renderThumbs() {
