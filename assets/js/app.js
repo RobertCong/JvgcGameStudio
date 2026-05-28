@@ -36,7 +36,8 @@
     return dict[key] || '';
   }
 
-  /* SAFETY: innerHTML below is safe because all I18N values are hardcoded at build-time (assets/js/i18n.js); never accept user input here. */
+  /* SAFETY: innerHTML below is safe because all I18N values are hardcoded in
+   * the source dictionary (assets/js/i18n.js); never accept user input here. */
   function applyI18n() {
     document.documentElement.setAttribute('lang', state.lang);
     document.title = t('meta.title');
@@ -45,6 +46,15 @@
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       el.innerHTML = t(key);
+    });
+    /* data-i18n-attr value format: "<attribute>:<i18n.key>"; e.g. "aria-label:nav.ariaMain" */
+    document.querySelectorAll('[data-i18n-attr]').forEach(function (el) {
+      var spec = el.getAttribute('data-i18n-attr');
+      var idx = spec.indexOf(':');
+      if (idx <= 0) return;
+      var attr = spec.slice(0, idx).trim();
+      var key = spec.slice(idx + 1).trim();
+      el.setAttribute(attr, t(key));
     });
   }
 
@@ -157,7 +167,7 @@
 
   function updateHeroStats() {
     var el = document.getElementById('hero-titles-count');
-    if (el && window.GAMES) {
+    if (el && Array.isArray(window.GAMES)) {
       el.textContent = String(window.GAMES.length);
     }
   }

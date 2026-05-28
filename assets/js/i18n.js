@@ -12,6 +12,9 @@ window.I18N = {
     'nav.games': 'Games',
     'nav.about': 'About',
     'nav.contact': 'Contact',
+    'nav.ariaMain': 'Main navigation',
+    'nav.ariaLogo': 'JVGC Studio home',
+    'nav.ariaLang': 'Language',
 
     'hero.eyebrow': 'Joy · Victory · Game · Creation',
     'hero.title': 'Create<br>Joyful Victories.',
@@ -26,6 +29,7 @@ window.I18N = {
     'games.title': 'Seven titles. All on the App Store.',
     'games.cta': 'App Store ↗',
     'games.ctaDisabled': 'Coming soon',
+    'games.ariaList': 'Games list',
 
     'about.eyebrow': 'About',
     'about.title': 'Easy to play.<br>Built to delight.',
@@ -47,6 +51,9 @@ window.I18N = {
     'nav.games': '游戏作品',
     'nav.about': '关于',
     'nav.contact': '联系',
+    'nav.ariaMain': '主导航',
+    'nav.ariaLogo': 'JVGC Studio 首页',
+    'nav.ariaLang': '语言',
 
     'hero.eyebrow': '欢乐 · 胜利 · 游戏 · 创造',
     'hero.title': '创造欢乐的<br>胜利时刻。',
@@ -61,6 +68,7 @@ window.I18N = {
     'games.title': '七款作品，均已上线 App Store。',
     'games.cta': 'App Store ↗',
     'games.ctaDisabled': '即将上线',
+    'games.ariaList': '游戏列表',
 
     'about.eyebrow': '关于',
     'about.title': '好上手，<br>更好玩。',
